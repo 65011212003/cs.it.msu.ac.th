@@ -1,0 +1,1 @@
+No Content: http://cs.it.msu.ac.th/cc-init.js

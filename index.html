@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Computer Science at Mahasarakham University</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/video.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2B3467;
+            --secondary: #BAD7E9;
+            --light: #F2F2F2;
+            --dark: #111111;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .navbar {
+            transition: all 0.3s ease;
+            background: rgba(43, 52, 103, 0.95) !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: var(--light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary), #1a1f3d);
+            padding: 120px 0;
+            color: var(--light);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .team-item img {
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .team-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #343f7d;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: var(--primary);
+            color: var(--light);
+        }
+
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Modern animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-shadow {
+            transition: all 0.3s ease;
+        }
+        .hover-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2B3467, #1a1f3d);
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+        .icon-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(43, 52, 103, 0.3);
+        }
+        .icon-box i {
+            font-size: 24px;
+            color: #ffffff;
+        }
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(43, 52, 103, 0.1);
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+        }
+        .stat-icon i {
+            font-size: 32px;
+            color: #2B3467;
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: rgba(43, 52, 103, 0.1);
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+        .feature-icon i {
+            font-size: 24px;
+            color: #2B3467;
+        }
+        .graduate-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .graduate-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .graduate-btn .fas {
+            transition: all 0.3s ease;
+        }
+
+        .graduate-btn:hover .fas {
+            transform: scale(1.2);
+        }
+    </style>
+
+    <meta name="keywords" content="วิทยาการคอมพิวเตอร์ มมส, วิทย์คอม มมส, computer science msu thailand, cs msu thailand" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ6CZPQ1S0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HJ6CZPQ1S0');
+    </script>
+
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" 
+        nonce="random_nonce">
+    </script>
+</head>
+
+<body>
+    <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js"></script>
+    <script defer src="cc-init.js"></script>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid py-2 bg-primary">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-lg-start">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-dark py-2 px-3" href="mailto:cstmsu@it.msu.ac.th">
+                            <i class="bi bi-envelope me-2"></i>cstmsu@it.msu.ac.th
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-dark px-3" href="https://www.facebook.com/profile.php?id=100087469600986" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-dark px-3" href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-dark px-3" href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-dark px-3" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-dark px-3" href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm px-5 py-3">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+            <img src="https://it.msu.ac.th/wp-content/uploads/2017/01/cropped-Informatics_MSU_Logo.svg.png" alt="MSU Logo" height="40" class="me-2">
+            <h1 class="m-0 text-uppercase text-white" style="font-size: 28px; letter-spacing: 2px;">CSMSU</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="#hero" class="nav-item nav-link">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#academic-staff" class="nav-item nav-link">Academic Staff</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Programs</a>
+                    <div class="dropdown-menu m-0 bg-dark border-0">
+                        <a href="#undergraduate" class="dropdown-item text-light">Undergraduate</a>
+                        <a href="#graduate" class="dropdown-item text-light">Graduate</a>
+                    </div>
+                </div>
+                <a href="#research" class="nav-item nav-link">Research</a>
+                <a href="#contact" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="https://inter.msu.ac.th/admissions/online-apply/for-undergraduate-program/" class="btn btn-light rounded-pill ms-4 px-4" target="_blank">
+                Apply Now
+            </a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="hero-section position-relative" id="hero">
+        <div class="hero-particles position-absolute w-100 h-100" id="particles-js"></div>
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- First Slide -->
+                <div class="carousel-item active">
+                    <div class="container position-relative">
+                        <div class="row min-vh-85 align-items-center">
+                            <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="hero-content text-white">
+                                    <h1 class="display-3 fw-bold mb-4 text-gradient">
+                                        Shaping Tomorrow's <br>Digital Leaders
+                                    </h1>
+                                    <p class="fs-4 mb-4 text-light opacity-90">Department of Computer Science<br>Mahasarakham University</p>
+                                    <div class="hero-features mb-5">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                            <span class="fs-5">Dual Degree Program with CQUPT, China</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                            <span class="fs-5">World-Class Research Facilities</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                            <span class="fs-5">Industry-Connected Curriculum</span>
+                                        </div>
+                                    </div>
+                                    <div class="hero-buttons">
+                                        <a href="https://inter.msu.ac.th/admissions/online-apply/for-undergraduate-program/" 
+                                           class="btn btn-primary btn-lg rounded-pill me-3 px-4 py-3 animated-button"
+                                           target="_blank">
+                                            Apply Now
+                                            <i class="fas fa-arrow-right ms-2"></i>
+                                        </a>
+                                        <a href="#about" 
+                                           class="btn btn-outline-light btn-lg rounded-pill px-4 py-3">
+                                            Learn More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
+                                <div class="hero-image-wrapper">
+                                    <img src="https://campus.campus-star.com/app/uploads/2017/02/IMG_6492.jpg" 
+                                         alt="CS MSU Campus" 
+                                         class="img-fluid rounded-3 hero-image shadow-lg">
+                                    <div class="floating-card bg-white p-4 rounded-3 shadow-lg">
+                                        <div class="d-flex align-items-center">
+                                            <div class="stat-circle bg-primary text-white me-3">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="mb-1">500+ Students</h4>
+                                                <p class="mb-0 text-muted">From 10+ Countries</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Slide -->
+                <div class="carousel-item">
+                    <div class="container position-relative">
+                        <div class="row min-vh-85 align-items-center">
+                            <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="hero-content text-white">
+                                    <h1 class="display-3 fw-bold mb-4 text-gradient">
+                                        Research Excellence & <br>Innovation
+                                    </h1>
+                                    <p class="fs-4 mb-4 text-light opacity-90">Pioneering Research in AI, Machine Learning, and Computer Systems</p>
+                                    <div class="hero-features mb-5">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-flask"></i>
+                                            </div>
+                                            <span class="fs-5">State-of-the-art Research Labs</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-brain"></i>
+                                            </div>
+                                            <span class="fs-5">AI & Machine Learning Focus</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-project-diagram"></i>
+                                            </div>
+                                            <span class="fs-5">Industry Collaborations</span>
+                                        </div>
+                                    </div>
+                                    <div class="hero-buttons">
+                                        <a href="#research" 
+                                           class="btn btn-primary btn-lg rounded-pill me-3 px-4 py-3 animated-button">
+                                            Explore Research
+                                            <i class="fas fa-arrow-right ms-2"></i>
+                                        </a>
+                                        <a href="https://inter.msu.ac.th/admissions/online-apply/for-graduate-program/" 
+                                           class="btn btn-outline-light btn-lg rounded-pill px-4 py-3 graduate-btn"
+                                           target="_blank">
+                                            Graduate Programs
+                                            <i class="fas fa-graduation-cap ms-2 text-primary"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
+                                <div class="hero-image-wrapper">
+                                    <img src="img/ai.png" 
+                                         alt="Research Excellence" 
+                                         class="img-fluid rounded-3 hero-image shadow-lg">
+                                    <div class="floating-card bg-white p-4 rounded-3 shadow-lg">
+                                        <div class="d-flex align-items-center">
+                                            <div class="stat-circle bg-primary text-white me-3">
+                                                <i class="fas fa-award"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="mb-1">200+ Publications</h4>
+                                                <p class="mb-0 text-muted">In Leading Journals</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Slide -->
+                <div class="carousel-item">
+                    <div class="container position-relative">
+                        <div class="row min-vh-85 align-items-center">
+                            <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="hero-content text-white">
+                                    <h1 class="display-3 fw-bold mb-4 text-gradient">
+                                        Your Future Starts <br>Here
+                                    </h1>
+                                    <p class="fs-4 mb-4 text-light opacity-90">Join Our Vibrant Academic Community</p>
+                                    <div class="hero-features mb-5">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-globe"></i>
+                                            </div>
+                                            <span class="fs-5">International Environment</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-laptop-code"></i>
+                                            </div>
+                                            <span class="fs-5">Modern Learning Facilities</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="feature-icon-small me-3">
+                                                <i class="fas fa-handshake"></i>
+                                            </div>
+                                            <span class="fs-5">Career Support & Networking</span>
+                                        </div>
+                                    </div>
+                                    <div class="hero-buttons">
+                                        <a href="#student-life" 
+                                           class="btn btn-primary btn-lg rounded-pill me-3 px-4 py-3 animated-button">
+                                            Student Life
+                                            <i class="fas fa-arrow-right ms-2"></i>
+                                        </a>
+                                        <a href="#gallery" 
+                                           class="btn btn-outline-light btn-lg rounded-pill px-4 py-3">
+                                            View Gallery
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
+                                <div class="hero-image-wrapper">
+                                    <img src="https://campus.campus-star.com/app/uploads/2015/09/msu-pic-3.jpg" 
+                                         alt="Campus Life" 
+                                         class="img-fluid rounded-3 hero-image shadow-lg">
+                                    <div class="floating-card bg-white p-4 rounded-3 shadow-lg">
+                                        <div class="d-flex align-items-center">
+                                            <div class="stat-circle bg-primary text-white me-3">
+                                                <i class="fas fa-graduation-cap"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="mb-1">95% Employment</h4>
+                                                <p class="mb-0 text-muted">Within 6 Months</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary), #1a1f3d);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .min-vh-85 {
+            min-height: 85vh;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, #ffffff, #BAD7E9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero-image {
+            border-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: 40px;
+            right: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .stat-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .feature-icon-small {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+        }
+
+        .animated-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .animated-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .animated-button::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            transition: width 0.3s ease;
+        }
+
+        .animated-button:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Carousel Fade Effect */
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+        }
+
+        /* Carousel Controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev {
+            left: 20px;
+        }
+
+        .carousel-control-next {
+            right: 20px;
+        }
+
+        .hero-section:hover .carousel-control-prev,
+        .hero-section:hover .carousel-control-next {
+            opacity: 1;
+        }
+
+        .carousel-indicators {
+            bottom: 30px;
+        }
+
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators button.active {
+            background-color: var(--secondary);
+            transform: scale(1.2);
+        }
+    </style>
+
+    <!-- Add particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.1, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.1,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container" style="margin-top: 30px;">
+            <div class="row gx-5 mb-2 mb-lg-0">
+                <div class="col-lg-6 my-lg-5 py-3">
+                        <div class="display-6 mb-4">
+                            <h1 class="display-4 fw-bold">Computer Science</h1>
+                            <h2 class="h3">Mahasarakham University</h2>
+                        </div>
+                        <p class="lead mb-4" style="text-align: justify;"> 
+                            Welcome to our vibrant and dynamic community of students, academic staff, and researchers 
+                            dedicated to advancing the field of computing. Our department combines strong theoretical foundations 
+                            with practical applications, offering comprehensive courses and research opportunities 
+                            that prepare students for today's rapidly evolving tech landscape. Our distinguished faculty
+                            brings extensive real-world experience and expertise to create an enriching learning environment.
+                        </p>
+
+                        <div class="display-6 mb-3">Academic Excellence</div>
+                        <p class="lead mb-4" style="text-align: justify;"> 
+                            We are committed to making computer science accessible and engaging for all students.
+                            From foundational programming courses to advanced specialized topics, our curriculum
+                            provides a solid technical foundation while fostering innovation and creativity.
+                            Our thriving research culture spans cutting-edge areas including artificial intelligence,
+                            machine learning, computer systems, and network security.
+                        </p>
+                        
+                        <p class="lead mb-4" style="text-align: justify;">
+                            Our faculty regularly secures grants from government agencies, foundations, and industry partners,
+                            creating opportunities for students to engage in impactful research. Whether your goal is a career
+                            in academia, industry, or government, we provide the skills, knowledge, and hands-on experience
+                            needed for success.
+                        </p>
+
+                        <p class="lead" style="text-align: justify;">
+                            Our <a href="index.html#section-2" class="fw-bold text-dark">undergraduate program</a> prepares students 
+                            for immediate entry into industry positions or advancement to 
+                            <a href="index.html#section-3" class="fw-bold text-dark">graduate studies</a>. Both paths offer excellent 
+                            career prospects and opportunities for growth.
+                        </p>
+                        
+                        <p class="lead mb-4" style="text-align: justify;">
+                            For those seeking advanced education, our MSc program offers specialized tracks and research opportunities
+                            in emerging technologies. PhD candidates work alongside leading researchers to develop innovative solutions
+                            to complex challenges impacting science, technology, and society.
+                        </p>
+                </div>
+                <div class="col-lg-6" style="min-height: 400px;">
+                    <div class="col-xl-10 py-6 col-lg-1" style="margin-top: 190px;">
+                        <div class="blog-item bg-primary">
+                            <a href="https://inter.msu.ac.th/admissions/online-apply/for-graduate-program/" target="_blank">
+                                <img class="img-fluid w-100" src="img/master.png" alt="Graduate Programs">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-10 py-1 col-lg-1">
+                        <div class="blog-item bg-primary">
+                            <a href="index.html#section-21">
+                                <img class="img-fluid w-100" src="img/post.jpg" alt="Latest News">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-10 py-1 col-lg-1">
+                        <div class="blog-item bg-primary">
+                            <img class="img-fluid w-100" src="img/ai.png" alt="AI Research">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- <div class="container-fluid py-5" id="section-4"> -->
+            <div class="container py-5" id="academic-staff">
+                <h2 class="display-5 text-center mb-5">Academic Staff</h2>
+                <div class="row g-4">
+                    <!-- Department Head -->
+                    <div class="col-12 mb-5">
+                        <div class="card border-0 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-3">
+                                    <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/beer.jpg" alt="Dr. Thawatwong Lawan">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Dr. Thawatwong Lawan</h3>
+                                        <h5 class="text-primary mb-3">Head of Department</h5>
+                                        <p class="card-text">Ph.D. in Computer Science</p>
+                                        <div class="mb-3">
+                                            <span class="badge bg-primary me-2">Computer Networks</span>
+                                            <span class="badge bg-primary me-2">Network Security</span>
+                                            <span class="badge bg-primary">Distributed Systems</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fas fa-envelope me-2 text-primary"></i>
+                                            <span>thawatwong.l@msu.ac.th</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-globe me-2"></i>Website</a>
+                                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-2"></i>Scholar</a>
+                                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-researchgate me-2"></i>ResearchGate</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Associate Professors -->
+                    <div class="col-12 mb-4">
+                        <h3 class="border-bottom pb-2 mb-4">Associate Professors</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/jik.jpg" alt="Assoc. Prof. Dr. Panida Songram">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Assoc. Prof. Dr. Panida Songram</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Data Mining</span>
+                                                    <span class="badge bg-secondary">Text Mining</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="https://scholar.google.com/citations?hl=th&user=E3KrlTcAAAAJ" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="https://www.scopus.com/authid/detail.uri?authorId=15058516100" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/jeab.jpg" alt="Assoc. Prof. Dr. Jantima Polpinij">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Assoc. Prof. Dr. Jantima Polpinij</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">NLP</span>
+                                                    <span class="badge bg-secondary">Text Mining</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="https://www.scopus.com/authid/detail.uri?authorId=6507816041" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assistant Professors -->
+                    <div class="col-12 mb-4">
+                        <h3 class="border-bottom pb-2 mb-4">Assistant Professors</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/tae.jpg" alt="Asst. Prof. Dr. Chatklaw Chareanpon">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Asst. Prof. Dr. Chatklaw Chareanpon</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Data Mining</span>
+                                                    <span class="badge bg-secondary">Robotics</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="https://www.scopus.com/authid/detail.uri?authorId=8507597400" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/ning.jpg" alt="Asst. Prof. Dr. Rapeeporn Chamchong">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Asst. Prof. Dr. Rapeeporn Chamchong</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Computer Vision</span>
+                                                    <span class="badge bg-secondary">Image Processing</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="https://www.scopus.com/authid/detail.uri?authorId=6507538296" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/tim.jpg" alt="Asst. Prof. Dr. Sasitorn Kaewman">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Asst. Prof. Dr. Sasitorn Kaewman</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Data Mining</span>
+                                                    <span class="badge bg-secondary">Machine Learning</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/ruan.jpg" alt="Asst. Prof. Dr. Samruan Wiangsamut">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Asst. Prof. Dr. Samruan Wiangsamut</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Software Engineering</span>
+                                                    <span class="badge bg-secondary">Database Systems</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/nuk.jpg" alt="Asst. Prof. Dr. Somnuk Puangpronpitag">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Asst. Prof. Dr. Somnuk Puangpronpitag</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Computer Networks</span>
+                                                    <span class="badge bg-secondary">Cybersecurity</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="https://scholar.google.com/citations?hl=th&user=ocFIn00AAAAJ" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="https://www.scopus.com/authid/detail.uri?authorId=16031991400" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/jay.jpg" alt="Asst. Prof. Dr. Manasawee Kaenampornpan">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Asst. Prof. Dr. Manasawee Kaenampornpan</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Human-Computer Interaction</span>
+                                                    <span class="badge bg-secondary">Health Informatics</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="https://www.scopus.com/authid/detail.uri?authorId=14054187700" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lecturers -->
+                    <div class="col-12">
+                        <h3 class="border-bottom pb-2 mb-4">Lecturers</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/pack.png" alt="Dr. Atthanapol Suwannasa">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dr. Atthanapol Suwannasa</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Machine Learning</span>
+                                                    <span class="badge bg-secondary">Deep Learning</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/kee.jpg" alt="Dr. Kaveepoj Banluewong">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dr. Kaveepoj Banluewong</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">AI</span>
+                                                    <span class="badge bg-secondary">Computer Vision</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/napat.jpg" alt="Dr. Napat Sakthong">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dr. Napat Sakthong</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Software Engineering</span>
+                                                    <span class="badge bg-secondary">Web Technologies</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/fon.jpg" alt="Dr. Nattthariya Laopracha">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dr. Nattthariya Laopracha</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Data Analytics</span>
+                                                    <span class="badge bg-secondary">Information Systems</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/panich.jpg" alt="Dr. Panich Sudkot">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dr. Panich Sudkot</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Computer Networks</span>
+                                                    <span class="badge bg-secondary">Network Security</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/pry.png" alt="Dr. Pornntiwa Pawara">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dr. Pornntiwa Pawara</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Machine Learning</span>
+                                                    <span class="badge bg-secondary">Pattern Recognition</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="img/x.jpg" alt="Dr. Umaporn Sai-Saengchan">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dr. Umaporn Sai-Saengchan</h5>
+                                                <p class="text-muted mb-2">Ph.D. in Computer Science</p>
+                                                <div class="mb-3">
+                                                    <span class="badge bg-secondary me-1">Data Mining</span>
+                                                    <span class="badge bg-secondary">Machine Learning</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-google me-1"></i>Scholar</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-database me-1"></i>Scopus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+
+    </div>
+    <!-- About End -->
+
+    
+    <!-- Background End -->
+
+
+    <!-- Dual Degree Start -->
+    <div id="section-2"> </div>
+    <div class="container-fluid py-1" id="undergraduate">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h1 class="display-5" id="section-21">Undergraduate Program</h1>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+            </div>
+
+            <div class="row gx-5">
+                <div class="col-lg-6">
+                    <div class="mb-5">
+                        <h2 class="mb-4">Computer Science & Technology</h2>
+                        <p class="lead mb-4">
+                            Our program provides comprehensive training in computer science fundamentals and emerging technologies. Students develop practical skills and innovative thinking through mentor-led research and hands-on projects.
+                        </p>
+
+                        <h3 class="mb-4">Program Options</h3>
+                        <div class="mb-4">
+                            <h4>Single Degree</h4>
+                            <p>Four-year B.Sc. in Computer Science and Technology from MSU.</p>
+
+                            <h4 style="color: #1a73e8;">Dual Degree</h4>
+                            <p>A collaboration with <a href="https://english.cqupt.edu.cn/" target="_blank" style="color: #1a73e8;">Chongqing University of Posts and Telecommunication (CQUPT)</a>. Students receive:</p>
+                            <ul>
+                                <li>BSc Computer Science and Technology from MSU</li>
+                                <li>BEng Computer Science and Technology from CQUPT</li>
+                            </ul>
+                            <p>Students study 2 years at MSU followed by 2 years at CQUPT.</p>
+                    </div>
+
+                        <h3 class="mb-4">Core Courses</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Year</th>
+                                        <th>Major Courses</th>
+                                        <th>Venue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Year 1</td>
+                                        <td>Introduction to Programming<br>Computer Architecture<br>Discrete Mathematics<br>Calculus</td>
+                                        <td rowspan="2">MSU, Thailand</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Year 2</td>
+                                        <td>Data Structure<br>Database<br>Discrete Mathematics</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Year 3</td>
+                                        <td>Numerical Method<br>Software Engineering<br>Software Design<br>Algorithm Design</td>
+                                        <td rowspan="2">CQUPT, China</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Year 4</td>
+                                        <td>Circuit and Electronic Technology<br>Operating Systems<br>Computer Networks</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                </div>
+
+                        <p><a href="./img/topology.png" target="_blank" class="btn btn-outline-primary">View Full Course Topology</a></p>
+
+                        <h3 class="mb-4">Program Focus Areas</h3>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <h5>Artificial Intelligence</h5>
+                                <p>Machine learning, natural language processing, computer vision</p>
+                    </div>
+                            <div class="col-md-6">
+                                <h5>Computer Networks</h5>
+                                <p>Network design, implementation and administration</p>
+                </div>
+                            <div class="col-md-6">
+                                <h5>Software Engineering</h5>
+                                <p>Software development lifecycle, testing, maintenance</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Cybersecurity</h5>
+                                <p>System protection, cryptography, network security</p>
+                    </div>
+                </div>
+
+                        <h3 class="mb-4">Admission Requirements</h3>
+                        <ul class="mb-4">
+                            <li>High school certificate or equivalent</li>
+                            <li>English proficiency (IELTS/TOEFL/MSU-Test)</li>
+                        </ul>
+
+                        <div class="mb-4">
+                            <h3>Apply Now</h3>
+                            <p>Contact us at <strong>cstmsu@it.msu.ac.th</strong></p>
+                            <a href="https://inter.msu.ac.th/admissions/online-apply/for-undergraduate-program/" class="btn btn-secondary" target="_blank">Start Application</a>
+                            </div>
+                            </div>
+                        </div>
+
+                <div class="col-lg-6">
+                    <div class="position-sticky" style="top: 2rem;">
+                        <div class="mb-4">
+                            <img src="img/post.jpg" alt="Program Image" class="img-fluid rounded">
+                    </div>
+                        <div class="mb-4">
+                            <img src="img/cqupt-msu.jpg" alt="CQUPT-MSU Partnership" class="img-fluid rounded">
+                </div>
+                        <div class="mb-4">
+                            <video autoplay muted loop class="img-fluid rounded">
+                                <source src="img/Aerial.mp4" type="video/mp4">
+                            </video>
+                            <p class="text-muted mt-2">Aerial views of CQUPT, China</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <!-- Services End -->
+
+
+    <!-- Graduate Program -->
+    <div class="container-fluid py-5" id="graduate">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h1 class="display-5">Graduate Programs</h1>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+                <p class="lead text-muted">Advancing Knowledge Through Research and Innovation</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Master's Program Card -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="bg-primary rounded-circle p-3 me-3">
+                                    <i class="fas fa-graduation-cap text-white fa-2x"></i>
+                                </div>
+                                <h2 class="card-title mb-0">Master of Science Program</h2>
+                            </div>
+                            
+                            <h5 class="text-primary mb-4">Program Overview</h5>
+                            <p class="card-text">Our MSc program offers advanced coursework and research opportunities in cutting-edge computer science fields. Students work closely with faculty mentors to develop expertise in their chosen specialization.</p>
+                            
+                            <h5 class="text-primary mb-3">Specializations</h5>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Artificial Intelligence</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Machine Learning</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Computer Vision</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Data Science</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Cybersecurity</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Network Systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h5 class="text-primary mb-3">Program Details</h5>
+                            <div class="row g-4 mb-4">
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-center border-start border-primary border-4 px-3">
+                                        <i class="fas fa-clock fa-2x text-primary me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0">Duration</h6>
+                                            <span class="text-muted">2 Years Full-time</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-center border-start border-primary border-4 px-3">
+                                        <i class="fas fa-users fa-2x text-primary me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0">Class Size</h6>
+                                            <span class="text-muted">Limited to 20 Students</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-end mt-4">
+                                <a href="https://inter.msu.ac.th/admissions/online-apply/for-graduate-program/" class="btn btn-outline-primary">
+                                    <i class="fas fa-arrow-right me-2"></i>Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PhD Program Card -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="bg-primary rounded-circle p-3 me-3">
+                                    <i class="fas fa-microscope text-white fa-2x"></i>
+                                </div>
+                                <h2 class="card-title mb-0">Doctor of Philosophy Program</h2>
+                            </div>
+
+                            <h5 class="text-primary mb-4">Program Overview</h5>
+                            <p class="card-text">Our PhD program prepares students for research careers in academia and industry. Students conduct original research under the guidance of world-class faculty, contributing to the advancement of computer science.</p>
+
+                            <h5 class="text-primary mb-3">Research Areas</h5>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Advanced AI Systems</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Deep Learning</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Natural Language Processing</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Network Security</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Distributed Systems</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Big Data Analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h5 class="text-primary mb-3">Program Details</h5>
+                            <div class="row g-4 mb-4">
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-center border-start border-primary border-4 px-3">
+                                        <i class="fas fa-clock fa-2x text-primary me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0">Duration</h6>
+                                            <span class="text-muted">3-5 Years Full-time</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-center border-start border-primary border-4 px-3">
+                                        <i class="fas fa-flask fa-2x text-primary me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0">Research Focus</h6>
+                                            <span class="text-muted">Original Contribution</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-end mt-4">
+                                <a href="https://inter.msu.ac.th/admissions/online-apply/for-graduate-program/" class="btn btn-outline-primary">
+                                    <i class="fas fa-arrow-right me-2"></i>Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Facilities -->
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-primary mb-4">Research Facilities & Support</h3>
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-server fa-2x text-primary me-3"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Advanced Computing Labs</h5>
+                                            <p class="text-muted">State-of-the-art computing facilities and research laboratories equipped with the latest technology.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-hands-helping fa-2x text-primary me-3"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Research Funding</h5>
+                                            <p class="text-muted">Competitive research grants and funding opportunities for qualified graduate students.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-globe fa-2x text-primary me-3"></i>
+                                        </div>
+                                        <div>
+                                            <h5>International Collaboration</h5>
+                                            <p class="text-muted">Opportunities for international research collaboration and exchange programs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-primary mb-4">Program Coordinators</h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/nuk.jpg" alt="Dr. Somnuk Puangpronpitag" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="ms-3">
+                                            <h5 class="mb-1">Dr. Somnuk Puangpronpitag</h5>
+                                            <p class="text-muted mb-1">Master's Program Director</p>
+                                            <p class="mb-0"><i class="fas fa-envelope me-2"></i>somnuk.p@msu.ac.th</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/jik.jpg" alt="Dr. Panida Songram" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="ms-3">
+                                            <h5 class="mb-1">Dr. Panida Songram</h5>
+                                            <p class="text-muted mb-1">Doctoral Studies Coordinator</p>
+                                            <p class="mb-0"><i class="fas fa-envelope me-2"></i>panida.s@msu.ac.th</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Graduate Program End -->
+
+    <!-- Research -->
+    <div class="container-fluid py-5" id="research">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h1 class="display-5">Research Excellence</h1>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+                <p class="lead text-muted">Advancing Technology Through Innovation and Discovery</p>
+            </div>
+
+            <!-- Research Overview Card -->
+            <div class="card border-0 shadow-sm mb-5">
+                <div class="card-body p-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <h2 class="text-primary mb-4">Research Vision</h2>
+                            <p class="lead mb-4">
+                                The Department of Computer Science at MSU is dedicated to pioneering research that pushes the boundaries of technology and innovation. Our interdisciplinary approach combines theoretical foundations with practical applications to address real-world challenges.
+                            </p>
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="feature-icon">
+                                            <i class="fas fa-flask"></i>
+                                        </div>
+                                        <h5 class="mb-0">Innovation Focus</h5>
+                                    </div>
+                                    <p class="text-muted">Developing cutting-edge solutions for tomorrow's challenges</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="feature-icon">
+                                            <i class="fas fa-handshake"></i>
+                                        </div>
+                                        <h5 class="mb-0">Industry Collaboration</h5>
+                                    </div>
+                                    <p class="text-muted">Strong partnerships with leading technology companies</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="it_research_vision_image_.jpeg" alt="Research Vision" class="img-fluid rounded shadow-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Areas -->
+            <div class="row g-4 mb-5">
+                <div class="col-12">
+                    <h2 class="text-primary mb-4">Research Areas</h2>
+                </div>
+                
+                <!-- Computer Vision & AI -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3 class="card-title mb-0">Computer Vision & AI</h3>
+                            </div>
+                            <p class="card-text">Our research laboratory specializes in developing advanced computer vision and AI solutions, focusing on:</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Deep Learning Applications</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Medical Image Analysis</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Autonomous Systems</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Intelligent Surveillance</li>
+                            </ul>
+                            <a href="http://misl.it.msu.ac.th/" class="btn btn-outline-primary" target="_blank">
+                                <i class="fas fa-arrow-right me-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Mining & NLP -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <h3 class="card-title mb-0">Text Mining & NLP</h3>
+                            </div>
+                            <p class="card-text">We develop sophisticated text analytics solutions for processing and understanding large-scale unstructured data:</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Natural Language Processing</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Sentiment Analysis</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Information Extraction</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Social Media Analytics</li>
+                            </ul>
+                            <a href="https://intlabmsu.com/IntLab/" class="btn btn-outline-primary" target="_blank">
+                                <i class="fas fa-arrow-right me-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3 class="card-title mb-0">Cybersecurity</h3>
+                            </div>
+                            <p class="card-text">Our cybersecurity research addresses critical challenges in digital security:</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Network Security & Protection</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Blockchain Technologies</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Applied Cryptography</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Security Consulting & Training</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-arrow-right me-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IoT & Networks -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <h3 class="card-title mb-0">IoT & Networks</h3>
+                            </div>
+                            <p class="card-text">We investigate next-generation networking technologies and IoT solutions:</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Smart Agriculture IoT</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Software-Defined Networks</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>5G/6G Technologies</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Edge Computing</li>
+                            </ul>
+                            <a href="http://isan.msu.ac.th" class="btn btn-outline-primary" target="_blank">
+                                <i class="fas fa-arrow-right me-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Impact -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="text-primary mb-4">Research Impact & Collaboration</h3>
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="stat-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h2 class="display-5 fw-bold mb-2">200+</h2>
+                                <p class="text-muted">Publications</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="stat-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h2 class="display-5 fw-bold mb-2">50+</h2>
+                                <p class="text-muted">Active Projects</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="stat-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h2 class="display-5 fw-bold mb-2">30+</h2>
+                                <p class="text-muted">Industry Partners</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="stat-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <h2 class="display-5 fw-bold mb-2">15+</h2>
+                                <p class="text-muted">Research Awards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Research End -->
+
+    <!-- Student Life Start -->
+    <div class="container-fluid py-5" id="student-life">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h1 class="display-5">Student Life</h1>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+                <p class="lead text-muted">Experience a Vibrant Campus Community</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Student Organizations -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box">
+                                    <i class="fas fa-users"></i>
+                            </div>
+                                <h3 class="card-title mb-0">Student Organizations</h3>
+                                    </div>
+                            <p class="card-text">Join our active student community and participate in various tech-focused clubs and organizations:</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>CS Student Association</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Coding Club</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>AI & Robotics Society</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Cybersecurity Team</li>
+                            </ul>
+                                    </div>
+                                    </div>
+                                </div>
+
+                <!-- Campus Facilities -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box">
+                                    <i class="fas fa-building"></i>
+                            </div>
+                                <h3 class="card-title mb-0">Campus Facilities</h3>
+                            </div>
+                            <p class="card-text">Access state-of-the-art facilities designed for optimal learning and collaboration:</p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Modern Computer Labs</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>24/7 Study Spaces</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Innovation Hub</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Research Centers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events & Activities -->
+                <div class="col-lg-12">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-primary mb-4">Events & Activities</h3>
+                    <div class="row g-4">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                        <h4 class="mb-2">Hackathons</h4>
+                                        <p class="text-muted">Annual coding competitions</p>
+                                            </div>
+                                            </div>
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-chalkboard-teacher"></i>
+                                        </div>
+                                        <h4 class="mb-2">Workshops</h4>
+                                        <p class="text-muted">Skill development sessions</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-briefcase"></i>
+                            </div>
+                                        <h4 class="mb-2">Career Fairs</h4>
+                                        <p class="text-muted">Industry networking</p>
+                        </div>
+                                    </div>
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-globe"></i>
+                                            </div>
+                                        <h4 class="mb-2">Tech Talks</h4>
+                                        <p class="text-muted">Expert speaker series</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    <!-- Student Life End -->
+
+    <!-- Gallery Start -->
+    <div class="container-fluid py-5" id="gallery">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h1 class="display-5">Gallery</h1>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+                <p class="lead text-muted">Moments at Computer Science MSU</p>
+            </div>
+
+                    <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm hover-zoom">
+                        <img src="https://it.msu.ac.th/wp-content/uploads/2024/11/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C%E0%B8%AA%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B8%9E%E0%B8%A5%E0%B8%84%E0%B8%99%E0%B8%89%E0%B8%B2%E0%B8%A2%E0%B9%81%E0%B8%AA%E0%B8%87-2568-head.jpg" 
+                             class="card-img-top" alt="CS MSU Activities">
+                        <div class="card-body p-4">
+                            <h5 class="card-title">Student Activities</h5>
+                            <p class="card-text text-muted">Engaging in various academic and social activities</p>
+                                    </div>
+                                            </div>
+                                            </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm hover-zoom">
+                        <img src="https://campus.campus-star.com/app/uploads/2017/02/IMG_6492.jpg" 
+                             class="card-img-top" alt="MSU Campus">
+                        <div class="card-body p-4">
+                            <h5 class="card-title">Campus Life</h5>
+                            <p class="card-text text-muted">Beautiful campus environment at MSU</p>
+                                        </div>
+                                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm hover-zoom">
+                        <img src="278681817_1984616595060090_2056394181194382392_n.jpg" 
+                             class="card-img-top" alt="CS Events">
+                        <div class="card-body p-4">
+                            <h5 class="card-title">Special Events</h5>
+                            <p class="card-text text-muted">Celebrating achievements and milestones</p>
+                                </div>
+                            </div>
+                        </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm hover-zoom">
+                        <img src="100086866_1468555219999566_8863478297418268672_n.jpg" 
+                             class="card-img-top" alt="College Building">
+                        <div class="card-body p-4">
+                            <h5 class="card-title">College Building</h5>
+                            <p class="card-text text-muted">Our modern campus facilities and architecture</p>
+                                    </div>
+                                            </div>
+                                            </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm hover-zoom">
+                        <img src="75295867_1299599343561822_2261829133552058368_n.jpg" 
+                             class="card-img-top" alt="Academic Activities">
+                        <div class="card-body p-4">
+                            <h5 class="card-title">Academic Excellence</h5>
+                            <p class="card-text text-muted">Pursuing academic achievements</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    </div>
+    <!-- Gallery End -->
+
+    <!-- Add hover-zoom animation style -->
+    <style>
+        .hover-zoom {
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        .hover-zoom:hover {
+            transform: scale(1.03);
+        }
+        .hover-zoom img {
+            transition: transform 0.3s ease;
+            height: 250px;
+            object-fit: cover;
+        }
+        .hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+
+    <!-- Social Media Feed Start -->
+    <div class="container-fluid py-5" id="social-media">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h1 class="display-5">Social Media</h1>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+                <p class="lead text-muted">Follow Us on Social Media</p>
+                                    </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Facebook Page Plugin -->
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <div class="fb-page" 
+                                data-href="https://www.facebook.com/ComputerScienceMSU"
+                                data-tabs="timeline"
+                                data-width="500"
+                                data-height="600"
+                                data-small-header="false"
+                                data-adapt-container-width="true"
+                                data-hide-cover="false"
+                                data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/ComputerScienceMSU" class="fb-xfbml-parse-ignore">
+                                    <a href="https://www.facebook.com/ComputerScienceMSU">Computer Science MSU</a>
+                                </blockquote>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                    <div class="text-center mt-4">
+                        <a href="https://www.facebook.com/ComputerScienceMSU" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-facebook-f me-2"></i>Follow Us on Facebook
+                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    </div>
+    <!-- Social Media Feed End -->
+
+    <!-- Footer Start -->
+    <footer class="footer py-5 bg-dark" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="text-white mb-4">Contact Information</h4>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
+                        <p class="text-light mb-0">Department of Computer Science<br>Mahasarakham University<br>Khamriang, Kantarawichai<br>Maha Sarakham 44150, Thailand</p>
+                                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-envelope text-primary me-3 mt-1"></i>
+                        <p class="text-light mb-0">cstmsu@it.msu.ac.th</p>
+                                            </div>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-primary btn-square rounded-circle me-2" href="https://www.facebook.com/ComputerScienceMSU/"><i class="fab fa-facebook-f text-white"></i></a>
+                                            </div>
+                                        </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="text-white mb-4">Navigation</h4>
+                    <div class="d-flex flex-column">
+                        <a class="text-light mb-2" href="#about"><i class="fas fa-angle-right me-2"></i>About Us</a>
+                        <a class="text-light mb-2" href="#programs"><i class="fas fa-angle-right me-2"></i>Programs</a>
+                        <a class="text-light mb-2" href="#graduate"><i class="fas fa-angle-right me-2"></i>Graduate Studies</a>
+                        <a class="text-light mb-2" href="#research"><i class="fas fa-angle-right me-2"></i>Research</a>
+                        <a class="text-light" href="#contact"><i class="fas fa-angle-right me-2"></i>Contact</a>
+                                    </div>
+                                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p class="text-light mb-4">Subscribe to our newsletter for updates about our programs and research.</p>
+                    <form class="position-relative">
+                        <input class="form-control bg-transparent border-light w-100 py-3 ps-4 pe-5 text-light" type="email" placeholder="Your email">
+                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </form>
+                            </div>
+                        </div>
+            <hr class="my-4 bg-light opacity-25">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0 text-light">&copy; 2024 Department of Computer Science, Mahasarakham University. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-light">Designed with <i class="fas fa-heart text-primary"></i> by CS-MSU</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top">
+        <i class="bi bi-arrow-up text-white fs-4 d-flex justify-content-center align-items-center"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+
+        // Activate fade-up elements on scroll
+        const fadeUpElements = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+        fadeUpElements.forEach(element => observer.observe(element));
+
+        // Add active class to navbar items on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('div[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
